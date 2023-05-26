@@ -10,6 +10,7 @@ public class TestController {
     public String getTest(HttpServletRequest request) {
     	System.out.println("Hello");
     	System.out.println("じろうプッシュします！");
+    	System.out.println("nakajima");
         return "Hello World!";
     }
 }
