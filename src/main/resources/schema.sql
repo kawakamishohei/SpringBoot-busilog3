@@ -1,0 +1,11 @@
+CREATE TABLE busilog(
+	id INT NOT NULL AUTO_INCREMENT,
+	shopname VARCHAR(100) NOT NULL,
+	foodname VARCHAR(100) NOT NULL,
+	price INT NOT NULL,
+	genre VARCHAR(100) NOT NULL,
+	score INT NOT NULL,
+	comment VARCHAR(100) NOT NULL,
+	shopaddress VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+);
