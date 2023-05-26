@@ -9,6 +9,7 @@ public class TestController {
     @GetMapping(path = "/test")
     public String getTest(HttpServletRequest request) {
     	System.out.println("Hello");
+    	System.out.println("じろうプッシュします！");
         return "Hello World!";
     }
 }
