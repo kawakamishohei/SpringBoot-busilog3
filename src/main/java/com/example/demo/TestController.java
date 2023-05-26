@@ -11,6 +11,7 @@ public class TestController {
     	System.out.println("Hello");
     	System.out.println("じろうプッシュします！");
     	System.out.println("nakajima");
+    	System.out.println("hiina");
         return "Hello World!";
     }
 }
