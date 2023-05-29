@@ -4,10 +4,26 @@ body{
 }
 .DivLink{
     position:relative;
+/*    ボタンの形について*/
     width:280px;
     height:96px;
+    border-radius: 10px;
+/*    ボタンの背景色*/
     background-color:#fffbb6;
-    border:1px solid #ff6a00;
+/*    ボタンの枠線について*/
+    border:3px solid #ff6a00;
+/*    フォント情報*/
+    font-size:30px;
+    font-weight:bold;
+    font-family: "Hannari";
+    align-content: center;
+    text-align: center;
+    
+    margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
 .DivLink .Link{
@@ -17,4 +33,11 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.Mannaka{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
