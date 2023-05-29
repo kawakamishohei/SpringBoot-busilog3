@@ -9,7 +9,7 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<div th:object="${input}">
+	<div th:object="${loginput}">
 		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
 			<p>
 				番号:<span th:text="*{id}"></span>

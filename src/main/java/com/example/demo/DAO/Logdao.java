@@ -140,7 +140,7 @@ public class Logdao {
 			//コンソールに表示
 			System.out.println("編集の実行");
 			//UPDATEを実行
-			db.update("INSERT INTO busilog (shopname,foodname,price,genre,score,comment,shopaddress) VALUES(?,?,?,?,?,?,?)", logform.getShopname(),logform.getFoodname(),
-					logform.getPrice(),logform.getGenre(),logform.getScore(),logform.getComment(),logform.getShopaddress());
+			db.update("UPDATE busilog SET shopname = ?,foodname = ?,price = ?,genre = ?,score = ?,comment = ?,shopaddress = ? WHERE id = ?",logform.getShopname(),logform.getFoodname(),
+					logform.getPrice(),logform.getGenre(),logform.getScore(),logform.getComment(),logform.getShopaddress(),id);
 		}
 }
