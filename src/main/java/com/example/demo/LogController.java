@@ -25,27 +25,28 @@ public class LogController {
 			return "index";
 		}
 		
-		@RequestMapping("/logform")
-		public String form(Model model, Loginput loginput) {
+		@RequestMapping("/input")
+		public String form(Model model,Loginput loginput) {
 			model.addAttribute("title", "入力フォーム");
-			return "logform";
+			return "input";
 		}
-		@RequestMapping("/logconfirm")
+		
+		@RequestMapping("/confirm")
 		public String confirm(@Validated Loginput Loginput, BindingResult result, Model model) {
 
 			if (result.hasErrors()) {
 				model.addAttribute("title", "入力フォーム");
-				return "logform";
+				return "input";
 			}
 
 			model.addAttribute("title", "確認ページ");
-			return "logconfirm";
+			return "confirm";
 		}
 		
 		@RequestMapping("/complete")
 		public String complete(Loginput loginput, Model model) {
 			Logform logform = new Logform();
-			logform.setShopName(loginput.getShopname());
+			logform.setShopname(loginput.getShopname());
 			logform.setFoodname(loginput.getFoodname());
 			logform.setPrice(loginput.getPrice());
 			logform.setGenre(loginput.getGenre());
@@ -64,6 +65,10 @@ public class LogController {
 			model.addAttribute("title","一覧ページ");
 			return "view";
 		}
+		
+		//
+		
+		
 		//削除(DELETE)
 		@RequestMapping("/del/{id}")
 		public String destroy(@PathVariable Long id) {
@@ -92,7 +97,7 @@ public class LogController {
 			//フォームの値をエンティティに入れ直し
 			Logform logform = new Logform();
 			System.out.println(loginput.getShopname());//取得できているかの確認
-			logform.setShopName(loginput.getShopname());
+			logform.setShopname(loginput.getShopname());
 			System.out.println(loginput.getFoodname());
 			logform.setFoodname(loginput.getFoodname());
 			logform.setPrice(loginput.getPrice());
