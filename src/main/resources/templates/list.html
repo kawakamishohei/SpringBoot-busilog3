@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Busilog</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+	<h1 th:text="${title}"></h1>
+	<table>
+		<tr>
+			<th>id</th>
+			<th>店名</th>
+			<th>商品名</th>
+			<th>値段</th>
+			<th>ジャンル</th>
+			<th>スコア</th>
+			<th>コメント</th>
+			<th>店舗住所</th>
+		</tr>
+		<tr th:each="res : ${dbList}">
+			<td th:text="${res.id}">1</td>
+			<td th:text="${res.shopname}">店名</td>
+			<td th:text="${res.foodname}">商品名</td>
+			<td th:text="${res.price}">値段</td>
+			<td th:text="${res.genre}">ジャンル</td>
+			<td th:text="${res.score}">スコア</td>
+			<td th:text="${res.comment}">コメント</td>
+			<td th:text="${res.shopaddress}">店舗住所</td>
+			<td>
+				<form th:action="@{/del/{id}(id=${res.id})}">
+					<input type="submit" value="削除" />
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/edit/{id}(id=${res.id})}">
+					<input type="submit" value="編集" />
+				</form>
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a href="/input" th:href="@{/input}">入力画面へ</a>
+	</p>
+</body>
+
+</html>
