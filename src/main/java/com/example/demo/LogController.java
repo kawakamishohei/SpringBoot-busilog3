@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.DAO.Logdao;
 import com.example.demo.entity.Logform;
 
+@Controller
 public class LogController {
 
 	//SampleDaoの用意
@@ -58,16 +60,27 @@ public class LogController {
 		}
 		
 		//全件検索(SELECT)
-		@RequestMapping("/view")
-		public String view(Model model) {
+		@RequestMapping("/list")
+		public String list(Model model) {
 			List<Logform> list = logdao.searchDb();
 			model.addAttribute("dbList",list);
 			model.addAttribute("title","一覧ページ");
-			return "view";
+			return "list";
 		}
 		
-		//
-		
+		//条件検索(SELECT * WHERE)
+		@RequestMapping("/search")
+		public String list_limited(@PathVariable Long id,Model model) {
+			List<Logform> list = logdao.searchDb_limited(id);
+			
+			//リストから、オブジェクトだけをピックアップ
+			Logform entformdb = list.get(0);
+
+			//スタンバイしているViewに向かって、データを投げる
+			model.addAttribute("loginput", entformdb);
+			model.addAttribute("title", "検索ページ");
+			return "search";
+		}
 		
 		//削除(DELETE)
 		@RequestMapping("/del/{id}")
