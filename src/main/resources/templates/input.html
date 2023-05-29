@@ -12,7 +12,7 @@
 		<p>店名：<input type="text" name="shopname" th:value="*{shopname}"></p>
 		<div th:if="${#fields.hasErrors('shopname')}" th:errors="*{shopname}">エラー</div>
 		<p>商品名：<input type="text" name="foodname" th:value="*{foodname}"></p>
-		<div th:if="${#fields.hasErrors('foodname')}" th:errors="*{foodname}">エラー</div>		
+		<div th:if="${#fields.hasErrors('foodname')}" th:errors="*{foodname}">エラー</div>
 		<p>値段：<input type="text" name="price" th:value="*{price}"></p>
 		<div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">エラー</div>
 		<p>ジャンル：<input type="text" name="genre" th:value="*{genre}"></p>
@@ -25,6 +25,7 @@
 		<div th:if="${#fields.hasErrors('shopaddress')}" th:errors="*{shopaddress}">エラー</div>
 		<input type="submit" value="送信">
 	</form>
+	<a href="index.html" th:href="@{/}">ホーム画面</a>
 </body>
 
 </html>
