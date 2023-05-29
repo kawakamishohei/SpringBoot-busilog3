@@ -1,25 +1,32 @@
 @charset "UTF-8";
 
-h1{
-	text-align:center;
+body{
+	background-color: #f2eee1;
+}
+
+h1 {
+	text-align: center;
 }
 
 table {
 	border-collapse: collapse;
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
+
 table th {
-	background: #379ce8;
+	background: #369851;
 	border: solid 1px #ccc;
 	color: #fff;
 	padding: 10px;
 }
+
 table td {
+	background: #fff;
 	border: solid 1px #ccc;
 	padding: 10px;
 }
 
-p{
-	text-align:right;
+p {
+	margin-left: 1050px;
 }
