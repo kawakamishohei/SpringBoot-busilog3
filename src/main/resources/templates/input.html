@@ -4,6 +4,7 @@
 <head>
 	<title>入力 - BUSILOG</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style-kanesaka.css}">
 </head>
 
 <body>
@@ -23,9 +24,13 @@
 		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
 		<p>店舗住所：<input type="text" name="shopaddress" th:value="*{shopaddress}"></p>
 		<div th:if="${#fields.hasErrors('shopaddress')}" th:errors="*{shopaddress}">エラー</div>
-		<input type="submit" value="送信">
+		<input type="submit" class="MiniButton" value="送信">
 	</form>
-	<a href="index.html" th:href="@{/}">ホーム画面</a>
+	<div class="DivLink">
+		ホームへ戻る
+		<a class="Link" href="index.html" th:href="@{/}"></a>
+	</div>
+
 </body>
 
 </html>

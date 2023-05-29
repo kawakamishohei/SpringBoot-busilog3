@@ -40,9 +40,31 @@ body{
     height: 100%;
 }
 
-.Mannaka{
-	margin-top: auto;
-	margin-bottom: auto;
+.MiniButton{
+    position:relative;
+/*    ボタンの形について*/
+    width:280px;
+    height:96px;
+    border-radius: 10px;
+    padding-top:auto;
+	padding-bottom:auto;
+ 
+/*    ボタンの背景色*/
+    background-color:#fffbb6;
+/*    ボタンの枠線について*/
+    border:3px solid #ff6a00;
+/*    フォント情報*/
+    font-size:30px;
+    font-weight:bold;
+    font-family: "Hannari";
+
+    text-align: center;
+	vertical-align: middle;
+
+    
+/*    margin-top: auto;*/
+/*	margin-bottom: auto;*/
 	margin-left: auto;
 	margin-right: auto;
+
 }

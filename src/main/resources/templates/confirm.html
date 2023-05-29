@@ -4,18 +4,25 @@
 <head>
 	<title>Hello</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style-kanesaka.css}">
 </head>
 
 <body>
 	<h1><span th:text="${title}"></span></h1>
-	
+
 	<div th:object="${loginput}">
 		<p>入力内容</p>
+		<p>【品名】</p>
 		<p th:text="*{foodname}"></p>
+		<p>【価格】</p>
 		<p th:text="*{price}"></p>
+		<p>【ジャンル】</p>
 		<p th:text="*{genre}"></p>
+		<p>【点数】</p>
 		<p th:text="*{score}"></p>
+		<p>【コメント】</p>
 		<p th:text="*{comment}"></p>
+		<p>【住所】</p>
 		<p th:text="*{shopaddress}"></p>
 		<p>以上でよろしいですか？</p>
 		<form method="get" action="#" th:action="@{/input}">
@@ -39,7 +46,11 @@
 			<input type="submit" value="完了">
 		</form>
 	</div>
-	<a href="index.html" th:href="@{/}">ホーム画面</a>
+	<div class="DivLink">
+		ホームへ戻る
+		<a class="Link" href="index.html" th:href="@{/}"></a>
+	</div>
+
 </body>
 
 </html>
