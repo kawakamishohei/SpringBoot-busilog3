@@ -86,7 +86,7 @@ public class LogController {
 		@RequestMapping("/del/{id}")
 		public String destroy(@PathVariable Long id) {
 			logdao.deleteDb(id);
-			return "redirect:/view";
+			return "redirect:/list";
 		}
 		
 		//更新画面の表示(SELECT)
@@ -121,6 +121,6 @@ public class LogController {
 			//更新の実行
 			logdao.updateDb(id,logform);
 			//一覧画面へリダイレクト
-			return "redirect:/view";
+			return "redirect:/list";
 		}
 }
