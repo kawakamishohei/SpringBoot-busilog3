@@ -69,17 +69,16 @@ public class LogController {
 		}
 		
 		//条件検索(SELECT * WHERE)
-		@RequestMapping("/search")
-		public String list_limited(@PathVariable Long id,Model model) {
-			List<Logform> list = logdao.searchDb_limited(id);
+		@RequestMapping("/search/{price}")
+		public String list_limited(@PathVariable Long price,Model model) {
+			List<Logform> list = logdao.searchDb_limited(price);
 			
 			//リストから、オブジェクトだけをピックアップ
 			Logform entformdb = list.get(0);
 
 			//スタンバイしているViewに向かって、データを投げる
 			model.addAttribute("loginput", entformdb);
-			model.addAttribute("title", "検索ページ");
-			return "search";
+			return "redirect:/list";
 		}
 		
 		//削除(DELETE)

@@ -62,9 +62,9 @@ public class Logdao {
 
 	
 	
-	public List<Logform> searchDb_limited(Long id) {
+	public List<Logform> searchDb_limited(Long price) {
 		//データベースから取り出したデータをresultDB1に入れる
-		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM busilog where id=?", id);
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM busilog where price >= ? AND (price + (price - 1)) < ?", price);
 
 		//画面に表示しやすい形のList(resultDB2)を用意
 		List<Logform> resultDb2 = new ArrayList<Logform>();
