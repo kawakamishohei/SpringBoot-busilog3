@@ -9,6 +9,9 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
+
+
+	
 	<table>
 		<tr>
 			<th>番号</th>
@@ -22,31 +25,32 @@
 			<th></th>
 			<th></th>
 		</tr>
-		<tr th:each="res : ${dbList}">
-			<td th:text="${res.id}">1</td>
-			<td th:text="${res.shopname}">店名</td>
-			<td th:text="${res.foodname}">商品名</td>
-			<td th:text="${res.price}">値段</td>
-			<td th:text="${res.genre}">ジャンル</td>
-			<td th:text="${res.score}">スコア</td>
-			<td th:text="${res.comment}">コメント</td>
-			<td th:text="${res.shopaddress}">店舗住所</td>
-			<td>
-				<form th:action="@{/del/{id}(id=${res.id})}">
-					<input type="submit" value="削除" />
-				</form>
-			</td>
-			<td>
-				<form th:action="@{/edit/{id}(id=${res.id})}">
-					<input type="submit" value="編集" />
-				</form>
-			</td>
+		<tr th:each=" res : ${dbList}">
+		<td th:text="${res.id}">1</td>
+		<td th:text="${res.shopname}">店名</td>
+		<td th:text="${res.foodname}">商品名</td>
+		<td th:text="${res.price}">値段</td>
+		<td th:text="${res.genre}">ジャンル</td>
+		<td th:text="${res.score}">スコア</td>
+		<td th:text="${res.comment}">コメント</td>
+		<td th:text="${res.shopaddress}">店舗住所</td>
+		<td>
+			<form th:action="@{/del/{id}(id=${res.id})}">
+				<input type="submit" value="削除" />
+			</form>
+		</td>
+		<td>
+			<form th:action="@{/edit/{id}(id=${res.id})}">
+				<input type="submit" value="編集" />
+			</form>
+		</td>
 		</tr>
-	</table>
-	<p>
-		<a href="/input" th:href="@{/input}">入力画面へ</a>
-	</p>
-	<a href="index.html" th:href="@{/}">ホーム画面</a>
+		</table>
+		<p>
+			<a href="/input" th:href="@{/input}">入力画面へ</a>
+			<a href="index.html" th:href="@{/}">ホーム画面へ</a>
+		</p>
+
 </body>
 
 </html>
