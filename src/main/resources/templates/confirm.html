@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1><span th:text="${title}"></span></h1>
+	
+	<div th:object="${input}">
+		<p>入力内容</p>
+		<p th:text="*{foodname}"></p>
+		<p th:text="*{price}"></p>
+		<p th:text="*{genre}"></p>
+		<p th:text="*{score}"></p>
+		<p th:text="*{comment}"></p>
+		<p th:text="*{shopaddress}"></p>
+		<p>以上でよろしいですか？</p>
+		<form method="get" action="#" th:action="@{/input}">
+			<input type="hidden" name="foodname" th:value="*{foodname}">
+			<input type="hidden" name="price" th:value="*{price}">
+			<input type="hidden" name="genre" th:value="*{genre}">
+			<input type="hidden" name="score" th:value="*{score}">
+			<input type="hidden" name="comment" th:value="*{comment}">
+			<input type="hidden" name="shopaddress" th:value="*{shopaddress}">
+			<input type="submit" value="入力画面へ">
+		</form>
+		<form method="get" action="#" th:action="@{/complete}">
+<!--			<input type="hidden" name="foodname" th:value="*{foodname}">-->
+<!--			<input type="hidden" name="price" th:value="*{price}">-->
+<!--			<input type="hidden" name="genre" th:value="*{genre}">-->
+<!--			<input type="hidden" name="score" th:value="*{score}">-->
+<!--			<input type="hidden" name="comment" th:value="*{comment}">-->
+<!--			<input type="hidden" name="shopaddress" th:value="*{shopaddress}">-->
+			<input type="submit" value="完了">
+		</form>
+	</div>
+	<a href="index.html" th:href="@{/index}">ホーム画面</a>
+</body>
+
+</html>
