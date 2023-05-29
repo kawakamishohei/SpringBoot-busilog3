@@ -1,0 +1,1 @@
+INSERT INTO busilog (shopname,foodname,price,genre,score,comment,shopaddress) VALUES ('A店','Aセット',880,'中華',5,'おいしい','東京都品川区');
