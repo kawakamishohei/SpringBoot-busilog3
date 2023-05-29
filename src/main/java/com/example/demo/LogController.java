@@ -34,7 +34,7 @@ public class LogController {
 		}
 		
 		@RequestMapping("/confirm")
-		public String confirm(@Validated Loginput Loginput, BindingResult result, Model model) {
+		public String confirm(@Validated Loginput loginput, BindingResult result, Model model) {
 
 			if (result.hasErrors()) {
 				model.addAttribute("title", "入力フォーム");

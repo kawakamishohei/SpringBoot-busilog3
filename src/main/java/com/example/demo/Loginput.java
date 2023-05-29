@@ -18,9 +18,9 @@ public class Loginput {
 	private String comment;
 	@NotBlank(message = "メールアドレスを入力してください")
 	private String shopaddress;
-	@NotBlank(message = "点数を入力してください")
+	
 	private int score;
-	@NotBlank(message = "金額を入力してください")
+	
 	private int price;
 	public String getShopname() {
 		return shopname;
