@@ -11,7 +11,7 @@
 	<h1><span th:text="${title}"></span></h1>
 	<div th:object="${loginput}">
 		<div class="ConfirmBox">
-			<p>入力内容</p>
+			<h2 class="kyocho">入力内容</h2>
 			<p>【品名】</p>
 			<p th:text="*{foodname}"></p>
 			<p>【価格】</p>
@@ -25,35 +25,33 @@
 			<p>【住所】</p>
 			<p th:text="*{shopaddress}"></p>
 			<p>以上でよろしいですか？</p>
-
-		</div>
-		<div class="Center">
-			<form method="get" action="#" th:action="@{/input}">
-				<input type="hidden" name="shopname" th:value="*{shopname}">
-				<input type="hidden" name="foodname" th:value="*{foodname}">
-				<input type="hidden" name="price" th:value="*{price}">
-				<input type="hidden" name="genre" th:value="*{genre}">
-				<input type="hidden" name="score" th:value="*{score}">
-				<input type="hidden" name="comment" th:value="*{comment}">
-				<input type="hidden" name="shopaddress" th:value="*{shopaddress}">
-				<input type="submit" class="MiniButton" value="入力画面へ">
-			</form>
-			<form method="get" action="#" th:action="@{/complete}">
-				<input type="hidden" name="shopname" th:value="*{shopname}">
-				<input type="hidden" name="foodname" th:value="*{foodname}">
-				<input type="hidden" name="price" th:value="*{price}">
-				<input type="hidden" name="genre" th:value="*{genre}">
-				<input type="hidden" name="score" th:value="*{score}">
-				<input type="hidden" name="comment" th:value="*{comment}">
-				<input type="hidden" name="shopaddress" th:value="*{shopaddress}">
-				<input type="submit" class="MiniButton" value="完了">
-			</form>
+			<div class="Center">
+				<form method="get" action="#" th:action="@{/input}">
+					<input type="hidden" name="shopname" th:value="*{shopname}">
+					<input type="hidden" name="foodname" th:value="*{foodname}">
+					<input type="hidden" name="price" th:value="*{price}">
+					<input type="hidden" name="genre" th:value="*{genre}">
+					<input type="hidden" name="score" th:value="*{score}">
+					<input type="hidden" name="comment" th:value="*{comment}">
+					<input type="hidden" name="shopaddress" th:value="*{shopaddress}">
+					<input type="submit" class="MiniButton" value="入力画面へ">
+				</form>
+				<form method="get" action="#" th:action="@{/complete}">
+					<input type="hidden" name="shopname" th:value="*{shopname}">
+					<input type="hidden" name="foodname" th:value="*{foodname}">
+					<input type="hidden" name="price" th:value="*{price}">
+					<input type="hidden" name="genre" th:value="*{genre}">
+					<input type="hidden" name="score" th:value="*{score}">
+					<input type="hidden" name="comment" th:value="*{comment}">
+					<input type="hidden" name="shopaddress" th:value="*{shopaddress}">
+					<input type="submit" class="MiniButton" value="完了">
+				</form>
+			</div>
 		</div>
 	</div>
-
-	<br>
+	
 	<div class="DivLink">
-		ホームへ戻る
+		<p>ホームへ戻る</p>
 		<a class="Link" href="index.html" th:href="@{/}"></a>
 	</div>
 
