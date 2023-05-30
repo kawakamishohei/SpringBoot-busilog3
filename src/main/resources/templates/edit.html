@@ -11,31 +11,32 @@
 	<h1 th:text="${title}"></h1>
 	<div th:object="${loginput}">
 		<div class="ConfirmBox">
+			<h2 class="kyocho">登録情報編集</h2>
 			<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
 
 
-				<p>
+				<p class="defaultFont">
 					番号：<span th:text="*{id}"></span>
 					<input type="hidden" name="id" th:value="*{id}">
 				</p>
 
 				<!--			<p>-->
 
-				<dl>
+				<dl class="defaultFont">
 					<dt>店名　</dt>
-					<dd><input type="text" name="shopname" th:value="*{shopname}"></dd>
+					<dd><input type="text" name="shopname" th:value="*{shopname}"class="defaultFont"></dd>
 					<dt>商品名　</dt>
-					<dd><input type="text" name="foodname" th:value="*{foodname}"></dd>
+					<dd><input type="text" name="foodname" th:value="*{foodname}"class="defaultFont"></dd>
 					<dt>値段　</dt>
-					<dd><input type="text" name="price" th:value="*{price}"></dd>
+					<dd><input type="text" name="price" th:value="*{price}"class="defaultFont"></dd>
 					<dt>ジャンル　</dt>
-					<dd><input type="text" name="genre" th:value="*{genre}"></dd>
+					<dd><input type="text" name="genre" th:value="*{genre}"class="defaultFont"></dd>
 					<dt>スコア　</dt>
-					<dd><input type="text" name="score" th:value="*{score}"></dd>
+					<dd><input type="text" name="score" th:value="*{score}"class="defaultFont"></dd>
 					<dt>コメント　</dt>
-					<dd><input type="text" name="comment" th:value="*{comment}"></dd>
+					<dd><input type="text" name="comment" th:value="*{comment}"class="defaultFont"></dd>
 					<dt>店舗住所　</dt>
-					<dd><input type="text" name="shopaddress" th:value="*{shopaddress}"></dd>
+					<dd><input type="text" name="shopaddress" th:value="*{shopaddress}"class="defaultFont"></dd>
 				</dl>
 				<!--<p>-->
 
@@ -48,7 +49,7 @@
 
 
 	<div class="DivLink">
-		ホームへ戻る
+		<p>ホームへ戻る</p>
 		<a class="Link" href="index.html" th:href="@{/}"></a>
 	</div>
 </body>

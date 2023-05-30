@@ -10,36 +10,37 @@
 <body>
 	<h1 th:text="${title}"></h1>
 
-<!--	<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">-->
-<!--		<p>検索：<input type="text" name="shopname" th:value="*{shopname}"></p>-->
-<!--		<input type="submit" value="検索">-->
-<!--	</form>-->
+	<!--	<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">-->
+	<!--		<p>検索：<input type="text" name="shopname" th:value="*{shopname}"></p>-->
+	<!--		<input type="submit" value="検索">-->
+	<!--	</form>-->
 
-<!--<label for="search">検索</label>-->
-<div align = "center">
-<form method="get" action="#" th:action="@{/search/{price}}" th:object="${loginput}">
-<p> <input type="search" name="price"  id = "price" placeholder="金額を入力">から
-	<input type="search" name="price2"  id = "price2" placeholder="金額を入力">の間</p>
-	<input type="submit" value="検索">
-</form>
-<form method="get" action="#" th:action="@{/search2/{score}}" th:object="${loginput}">
-<p> <input type="search" name="score"  id = "score" placeholder="スコアを入力"></p>
-	<input type="submit" value="検索">
-</form>
+	<!--<label for="search">検索</label>-->
+	<div align="center">
+		<form method="get" action="#" th:action="@{/search/{price}}" th:object="${loginput}">
+			<p class="defaultFont"> <input type="search" name="price" id="price" placeholder="金額を入力" class="defaultFont">から
+				<input type="search" name="price2" id="price2" placeholder="金額を入力" class="defaultFont">の間
+			</p>
+			<input type="submit" class="MiniListButton" value="検索">
+		</form>
+		<form method="get" action="#" th:action="@{/search2/{score}}" th:object="${loginput}">
+			<p class="defaultFont"> <input type="search" name="score" id="score" placeholder="スコアを入力" class="defaultFont"></p>
+			<input type="submit" class="MiniListButton" value="検索">
+		</form>
 
-<p>
-<form method="get" action="#" th:action="@{/sort}" th:object="${loginput}" style="display: inline;">
-<input type="submit" value="金額">
-</form>
-<form method="get" action="#" th:action="@{/sort2}" th:object="${loginput}" style="display: inline;">
-<input type="submit" value="スコア">
-</form>
-</div>
+		<p>
+		<form method="get" action="#" th:action="@{/sort}" th:object="${loginput}" style="display: inline;">
+			<input type="submit" class="MiniListButton" value="金額">
+		</form>
+		<form method="get" action="#" th:action="@{/sort2}" th:object="${loginput}" style="display: inline;">
+			<input type="submit" class="MiniListButton" value="スコア">
+		</form>
+	</div>
 
-	<table>
+	<table class="defaultFont">
 		<tr>
 			<th>番号</th>
-			<th>店舗名</th>
+			<th>店名</th>
 			<th>商品名</th>
 			<th>値段</th>
 			<th>ジャンル</th>
@@ -50,30 +51,36 @@
 			<th></th>
 		</tr>
 		<tr th:each=" res : ${dbList}">
-		<td th:text="${res.id}">1</td>
-		<td th:text="${res.shopname}">店名</td>
-		<td th:text="${res.foodname}">商品名</td>
-		<td th:text="${res.price}">値段</td>
-		<td th:text="${res.genre}">ジャンル</td>
-		<td th:text="${res.score}">スコア</td>
-		<td th:text="${res.comment}">コメント</td>
-		<td th:text="${res.shopaddress}">店舗住所</td>
-		<td>
-			<form th:action="@{/del/{id}(id=${res.id})}">
-				<input type="submit" value="削除" />
-			</form>
-		</td>
-		<td>
-			<form th:action="@{/edit/{id}(id=${res.id})}">
-				<input type="submit" value="編集" />
-			</form>
-		</td>
+			<td th:text="${res.id}">1</td>
+			<td th:text="${res.shopname}">店名</td>
+			<td th:text="${res.foodname}">商品名</td>
+			<td th:text="${res.price}">値段</td>
+			<td th:text="${res.genre}">ジャンル</td>
+			<td th:text="${res.score}">スコア</td>
+			<td th:text="${res.comment}">コメント</td>
+			<td th:text="${res.shopaddress}">店舗住所</td>
+			<td>
+				<form th:action="@{/del/{id}(id=${res.id})}">
+					<input type="submit" class="MiniListButton" value="削除" />
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/edit/{id}(id=${res.id})}">
+					<input type="submit" class="MiniListButton" value="編集" />
+				</form>
+			</td>
 		</tr>
-		</table>
-		<p>
-			<a href="/input" th:href="@{/input}">入力画面へ</a>
-			<a href="index.html" th:href="@{/}">ホーム画面へ</a>
-		</p>
+	</table>
+
+	<div class="DivLink">
+		<p>入力画面へ戻る</p>
+		<a class="Link" href="/input" th:href="@{/input}" ></a>
+	</div>
+	<div class="DivLink">
+		<p>ホームへ戻る</p>
+		<a class="Link" href="index.html" th:href="@{/}" ></a>
+	</div>
+
 
 </body>
 
