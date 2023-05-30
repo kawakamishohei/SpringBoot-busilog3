@@ -88,7 +88,24 @@ public class LogController {
 		return "list";
 		}
 		
+		//ソート(金額)
+		@RequestMapping("/sort")
+		public String list_sort(Model model) {
+		List<Logform> list = logdao.sortDb();
+		model.addAttribute("dbList",list);
+		model.addAttribute("title","Busilogリスト");
+		return"list";
+		}
 		
+		
+		//ソート(金額)
+		@RequestMapping("/sort2")
+		public String list_sort2(Model model) {
+		List<Logform> list = logdao.sort2Db();
+		model.addAttribute("dbList",list);
+		model.addAttribute("title","Busilogリスト");
+		return"list";
+		}
 		
 		
 		//削除(DELETE)

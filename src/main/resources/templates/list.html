@@ -16,17 +16,26 @@
 <!--	</form>-->
 
 <!--<label for="search">検索</label>-->
-
+<div align = "center">
 <form method="get" action="#" th:action="@{/search/{price}}" th:object="${loginput}">
-<p><input type="search" name="price"  id = "price" placeholder="金額を入力">から
-		 <input type="search" name="price2"  id = "price2" placeholder="金額を入力">の間</p>
-		 <div align="center"><input type="submit" value="検索"></div>
+<p> <input type="search" name="price"  id = "price" placeholder="金額を入力">から
+	<input type="search" name="price2"  id = "price2" placeholder="金額を入力">の間</p>
+	<input type="submit" value="検索">
 </form>
 <form method="get" action="#" th:action="@{/search2/{score}}" th:object="${loginput}">
-<p><input type="search" name="score"  id = "score" placeholder="スコアを入力"></p>
-		 <div align="center"><input type="submit" value="検索"></div>
+<p> <input type="search" name="score"  id = "score" placeholder="スコアを入力"></p>
+	<input type="submit" value="検索">
 </form>
-<br>
+
+<p>
+<form method="get" action="#" th:action="@{/sort}" th:object="${loginput}" style="display: inline;">
+<input type="submit" value="金額">
+</form>
+<form method="get" action="#" th:action="@{/sort2}" th:object="${loginput}" style="display: inline;">
+<input type="submit" value="スコア">
+</form>
+</div>
+
 	<table>
 		<tr>
 			<th>番号</th>

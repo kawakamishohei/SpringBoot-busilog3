@@ -126,6 +126,70 @@ public class Logdao {
 	}
 	
 	
+	public List<Logform> sortDb() {
+		String sql = "SELECT * FROM busilog ORDER BY price desc";
+
+		//データベースから取り出したデータをresultDB1に入れる
+		List<Map<String, Object>> resultDb1 = db.queryForList(sql);
+
+		//画面に表示しやすい形のList(resultDB2)を用意
+		List<Logform> resultDb2 = new ArrayList<Logform>();
+
+		//1件ずつピックアップ
+		for (Map<String, Object> result1 : resultDb1) {
+
+			//データ1件分を1つのまとまりとしたEntForm型の「entformdb」を生成
+			Logform entformdb = new Logform();
+
+			//id、nameのデータをentformdbに移す
+			entformdb.setId((int) result1.get("id"));
+			entformdb.setShopname((String) result1.get("shopname"));
+			entformdb.setFoodname((String) result1.get("foodname"));
+			entformdb.setPrice((int) result1.get("price"));
+			entformdb.setGenre((String) result1.get("genre"));
+			entformdb.setScore((int) result1.get("score"));
+			entformdb.setComment((String) result1.get("comment"));
+			entformdb.setShopaddress((String) result1.get("shopaddress"));
+			//移し替えたデータを持ったentformdbを、resultDB2に入れる
+			resultDb2.add(entformdb);
+		}
+		
+		//Controllerに渡す
+		return resultDb2;
+	}
+	
+	
+	public List<Logform> sort2Db() {
+		String sql = "SELECT * FROM busilog ORDER BY score desc";
+
+		//データベースから取り出したデータをresultDB1に入れる
+		List<Map<String, Object>> resultDb1 = db.queryForList(sql);
+
+		//画面に表示しやすい形のList(resultDB2)を用意
+		List<Logform> resultDb2 = new ArrayList<Logform>();
+
+		//1件ずつピックアップ
+		for (Map<String, Object> result1 : resultDb1) {
+
+			//データ1件分を1つのまとまりとしたEntForm型の「entformdb」を生成
+			Logform entformdb = new Logform();
+
+			//id、nameのデータをentformdbに移す
+			entformdb.setId((int) result1.get("id"));
+			entformdb.setShopname((String) result1.get("shopname"));
+			entformdb.setFoodname((String) result1.get("foodname"));
+			entformdb.setPrice((int) result1.get("price"));
+			entformdb.setGenre((String) result1.get("genre"));
+			entformdb.setScore((int) result1.get("score"));
+			entformdb.setComment((String) result1.get("comment"));
+			entformdb.setShopaddress((String) result1.get("shopaddress"));
+			//移し替えたデータを持ったentformdbを、resultDB2に入れる
+			resultDb2.add(entformdb);
+		}
+		
+		//Controllerに渡す
+		return resultDb2;
+	}
 	
 	
 	
