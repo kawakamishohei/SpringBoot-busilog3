@@ -31,24 +31,105 @@ body>p {
 	text-align: center;
 }
 
+form dl dt{
+	width: 165px;
+	padding: 10px 0;
+	float: left;
+	clear: both;
+	text-align: right;
+}
 
-label {
-	display: block;
-	text-align: center;
-/*	width: 300px;*/
-	margin-left: auto;
-	margin-right: auto;
+form dl dd{
+	padding: 10px 0;
+
 }
 
 
 
-/*div>form {*/
 
-/*	flex-direction: column;*/
-	/*	margin-left: auto;*/
-	/*	margin-right: auto;*/
-	/*	display: flex;*/
-	/*		text-align: center;*/
+.DivLink {
+	position: relative;
+	/*    ボタンの形について*/
+	width: 280px;
+	height: 96px;
+	border-radius: 10px;
+	padding-top: auto;
+	padding-bottom: auto;
 
-/*}*/
+	/*    ボタンの背景色*/
+	background-color: #fffbb6;
+	/*    ボタンの枠線について*/
+	border: 3px solid orange;
+	/*    フォント情報*/
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Hannari";
+
+	text-align: center;
+	vertical-align: middle;
+
+
+	/*    margin-top: auto;*/
+	/*	margin-bottom: auto;*/
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.DivLink .Link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.DivLink:hover {
+	background-color: orange;
+}
+
+/*-------------------------------------------------------------------------*/
+
+/*送信ボタンなどの小さめのボタン*/
+.MiniButton {
+	position: relative;
+	/*    ボタンの形について*/
+	width: 200px;
+	height: 70px;
+	border-radius: 30px;
+
+	/*	カーソル合わせると指になるやつ*/
+	cursor: pointer;
+
+	/*    ボタンの背景色*/
+	background-color: #fffbb6;
+	/*    ボタンの枠線について*/
+	border: 3px solid #daa520;
+	/*    フォント情報*/
+	font-size: 25px;
+	font-weight: bold;
+	font-family: "Hannari";
+
+}
+
+/*カーソル合してる間背景色変化*/
+.MiniButton:hover {
+	background-color: #daa520;
+}
+
+
+/*-------------------------------------------------------------------------*/
+
+.ConfirmBox{
+	position: relative;
+	width: px;
+	height: px;
+	background-color: #fafad2;
+	margin:100px 100px 50px;
+	padding:40px;
+	border-radius: 30px;
+}
+
+
 

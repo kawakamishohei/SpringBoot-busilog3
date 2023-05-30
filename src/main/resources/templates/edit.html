@@ -10,34 +10,46 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${loginput}">
-		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
-
-			<p>
-				番号：<span th:text="*{id}"></span>
-				<input type="hidden" name="id" th:value="*{id}">
-			</p>
-
-<!--			<p>-->
-				<dt>店名:</dt>
-				<dd><input type="text" name="shopname" th:value="*{shopname}"></dd>
-				<dt>商品名:</dt>
-				<dd><input type="text" name="foodname" th:value="*{foodname}"></dd>
-				<dt>値段:</dt>
-				<dd><input type="text" name="price" th:value="*{price}"></dd>
-				<dt>ジャンル:</dt>
-				<dd><input type="text" name="genre" th:value="*{genre}"></dd>
-				<dt>スコア:</dt>
-				<dd><input type="text" name="score" th:value="*{score}"></dd>
-				<dt>コメント:</dt>
-				<dd><input type="text" name="comment" th:value="*{comment}"></dd>
-				<dt>店舗住所:</dt>
-				<dd><input type="text" name="shopaddress" th:value="*{shopaddress}"></dd>
-<!--<p>-->
-
-			<input type="submit" value="更新">
+		<div class="ConfirmBox">
+			<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
 
 
-		</form>
+				<p>
+					番号：<span th:text="*{id}"></span>
+					<input type="hidden" name="id" th:value="*{id}">
+				</p>
+
+				<!--			<p>-->
+
+				<dl>
+					<dt>店名　</dt>
+					<dd><input type="text" name="shopname" th:value="*{shopname}"></dd>
+					<dt>商品名　</dt>
+					<dd><input type="text" name="foodname" th:value="*{foodname}"></dd>
+					<dt>値段　</dt>
+					<dd><input type="text" name="price" th:value="*{price}"></dd>
+					<dt>ジャンル　</dt>
+					<dd><input type="text" name="genre" th:value="*{genre}"></dd>
+					<dt>スコア　</dt>
+					<dd><input type="text" name="score" th:value="*{score}"></dd>
+					<dt>コメント　</dt>
+					<dd><input type="text" name="comment" th:value="*{comment}"></dd>
+					<dt>店舗住所　</dt>
+					<dd><input type="text" name="shopaddress" th:value="*{shopaddress}"></dd>
+				</dl>
+				<!--<p>-->
+
+				<input type="submit" class="MiniButton" value="更新">
+
+
+			</form>
+		</div>
+	</div>
+
+
+	<div class="DivLink">
+		ホームへ戻る
+		<a class="Link" href="index.html" th:href="@{/}"></a>
 	</div>
 </body>
 
