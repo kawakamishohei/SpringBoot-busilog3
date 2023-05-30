@@ -12,20 +12,45 @@
 	<div th:object="${loginput}">
 		<div class="ConfirmBox">
 			<h2 class="kyocho">入力内容</h2>
-			<p>【品名】</p>
-			<p th:text="*{foodname}"></p>
-			<p>【価格】</p>
-			<p th:text="*{price}"></p>
-			<p>【ジャンル】</p>
-			<p th:text="*{genre}"></p>
-			<p>【点数】</p>
-			<p th:text="*{score}"></p>
-			<p>【コメント】</p>
-			<p th:text="*{comment}"></p>
-			<p>【住所】</p>
-			<p th:text="*{shopaddress}"></p>
-			<p>以上でよろしいですか？</p>
 			<div class="Center">
+
+				<dl class="defaultFont">
+					<dt>【店名】　</dt>
+					<dd>
+						<div th:text="*{shopname}"></div>
+					</dd>
+					<dt>【商品名】　</dt>
+					<dd>
+						<div th:text="*{foodname}"></div>
+					</dd>
+					<dt>【値段】　</dt>
+					<dd>
+						<div th:text="*{price}"></div>
+					</dd>
+					<dt>【ジャンル】　</dt>
+					<dd>
+						<div th:text="*{genre}"></div>
+					</dd>
+					<dt>【スコア】　</dt>
+					<dd>
+						<div th:text="*{score}"></div>
+					</dd>
+					<dt>【コメント】　</dt>
+					<dd>
+						<div th:text="*{comment}"></div>
+					</dd>
+					<dt>【店舗住所】　</dt>
+					<dd>
+						<div th:text="*{shopaddress}"></div>
+					</dd>
+				</dl>
+
+
+
+
+
+
+
 				<form method="get" action="#" th:action="@{/input}">
 					<input type="hidden" name="shopname" th:value="*{shopname}">
 					<input type="hidden" name="foodname" th:value="*{foodname}">
@@ -49,7 +74,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="DivLink">
 		<p>ホームへ戻る</p>
 		<a class="Link" href="index.html" th:href="@{/}"></a>
