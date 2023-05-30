@@ -1,70 +1,94 @@
 @charset "UTF-8";
-body{
-	background-color: antiquewhite;
-}
-.DivLink{
-    position:relative;
-/*    ボタンの形について*/
-    width:280px;
-    height:96px;
-    border-radius: 10px;
-    padding-top:auto;
-	padding-bottom:auto;
- 
-/*    ボタンの背景色*/
-    background-color:#fffbb6;
-/*    ボタンの枠線について*/
-    border:3px solid #ff6a00;
-/*    フォント情報*/
-    font-size:30px;
-    font-weight:bold;
-    font-family: "Hannari";
 
-    text-align: center;
+body {
+	background-color: #f2eee1;
+}
+
+
+
+.DivLink {
+	position: relative;
+	/*    ボタンの形について*/
+	width: 280px;
+	height: 96px;
+	border-radius: 10px;
+	padding-top: auto;
+	padding-bottom: auto;
+
+	/*    ボタンの背景色*/
+	background-color: #fffbb6;
+	/*    ボタンの枠線について*/
+	border: 3px solid orange;
+	/*    フォント情報*/
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Hannari";
+
+	text-align: center;
 	vertical-align: middle;
 
-    
-/*    margin-top: auto;*/
-/*	margin-bottom: auto;*/
+
+	/*    margin-top: auto;*/
+	/*	margin-bottom: auto;*/
 	margin-left: auto;
 	margin-right: auto;
 
 }
 
-.DivLink .Link{
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.DivLink .Link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.MiniButton{
-    position:relative;
-/*    ボタンの形について*/
-    width:280px;
-    height:96px;
-    border-radius: 10px;
-    padding-top:auto;
-	padding-bottom:auto;
- 
-/*    ボタンの背景色*/
-    background-color:#fffbb6;
-/*    ボタンの枠線について*/
-    border:3px solid #ff6a00;
-/*    フォント情報*/
-    font-size:30px;
-    font-weight:bold;
-    font-family: "Hannari";
+.DivLink:hover {
+	background-color: orange;
+}
 
-    text-align: center;
-	vertical-align: middle;
+/*-------------------------------------------------------------------------*/
 
-    
-/*    margin-top: auto;*/
-/*	margin-bottom: auto;*/
-	margin-left: auto;
-	margin-right: auto;
+/*送信ボタンなどの小さめのボタン*/
+.MiniButton {
+	position: relative;
+	/*    ボタンの形について*/
+	width: 200px;
+	height: 70px;
+	border-radius: 30px;
 
+	/*	カーソル合わせると指になるやつ*/
+	cursor: pointer;
+
+	/*    ボタンの背景色*/
+	background-color: #fffbb6;
+	/*    ボタンの枠線について*/
+	border: 3px solid #daa520;
+	/*    フォント情報*/
+	font-size: 25px;
+	font-weight: bold;
+	font-family: "Hannari";
+
+}
+
+/*カーソル合してる間背景色変化*/
+.MiniButton:hover {
+	background-color: #daa520;
+}
+
+/*ボタンの中央揃え*/
+.Center{
+	text-align: center;
+}
+/*-------------------------------------------------------------------------*/
+
+.ConfirmBox{
+	position: relative;
+	width: px;
+	height: px;
+	background-color: #fafad2;
+	margin:100px 100px 50px;
+	padding:40px;
+	border-radius: 30px;
 }

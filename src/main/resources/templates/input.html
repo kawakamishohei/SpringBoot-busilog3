@@ -9,23 +9,25 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">
-		<p>店名：<input type="text" name="shopname" th:value="*{shopname}"></p>
-		<div th:if="${#fields.hasErrors('shopname')}" th:errors="*{shopname}">エラー</div>
-		<p>商品名：<input type="text" name="foodname" th:value="*{foodname}"></p>
-		<div th:if="${#fields.hasErrors('foodname')}" th:errors="*{foodname}">エラー</div>
-		<p>値段：<input type="text" name="price" th:value="*{price}"></p>
-		<div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">エラー</div>
-		<p>ジャンル：<input type="text" name="genre" th:value="*{genre}"></p>
-		<div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">エラー</div>
-		<p>スコア：<input type="text" name="score" th:value="*{score}"></p>
-		<div th:if="${#fields.hasErrors('score')}" th:errors="*{score}">エラー</div>
-		<p>コメント：<input type="text" name="comment" th:value="*{comment}"></p>
-		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
-		<p>店舗住所：<input type="text" name="shopaddress" th:value="*{shopaddress}"></p>
-		<div th:if="${#fields.hasErrors('shopaddress')}" th:errors="*{shopaddress}">エラー</div>
-		<input type="submit" class="MiniButton" value="送信">
-	</form>
+	<div class ="ConfirmBox">
+		<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">
+			<p>店名：<input type="text" name="shopname" th:value="*{shopname}"></p>
+			<div th:if="${#fields.hasErrors('shopname')}" th:errors="*{shopname}">エラー</div>
+			<p>商品名：<input type="text" name="foodname" th:value="*{foodname}"></p>
+			<div th:if="${#fields.hasErrors('foodname')}" th:errors="*{foodname}">エラー</div>
+			<p>値段：<input type="text" name="price" th:value="*{price}"></p>
+			<div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">エラー</div>
+			<p>ジャンル：<input type="text" name="genre" th:value="*{genre}"></p>
+			<div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">エラー</div>
+			<p>スコア：<input type="text" name="score" th:value="*{score}"></p>
+			<div th:if="${#fields.hasErrors('score')}" th:errors="*{score}">エラー</div>
+			<p>コメント：<input type="text" name="comment" th:value="*{comment}"></p>
+			<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
+			<p>店舗住所：<input type="text" name="shopaddress" th:value="*{shopaddress}"></p>
+			<div th:if="${#fields.hasErrors('shopaddress')}" th:errors="*{shopaddress}">エラー</div>
+			<input type="submit" class="MiniButton" value="送信">
+		</form>
+	</div>
 	<div class="DivLink">
 		ホームへ戻る
 		<a class="Link" href="index.html" th:href="@{/}"></a>
