@@ -1,1 +1,6 @@
-INSERT INTO busilog (shopname,foodname,price,genre,score,comment,shopaddress) VALUES ('A店','Aセット',880,'中華',5,'おいしい','東京都品川区');
+INSERT INTO busilog (shopname,foodname,price,genre,score,comment,shopaddress) 
+VALUES 
+('A店','麻婆豆腐',880,'中華',50,'おいしい','東京都品川区五反田'),
+('B店','寿司',8000,'和食',100,'最高','東京都中央区銀座'),
+('C店','オムライス',1500,'洋食',75,'すごくおいしい','京都府京都市'),
+('D店','パスタ',1180,'イタリアン',30,'普通','東京都渋谷区表参道');

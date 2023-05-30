@@ -17,11 +17,16 @@
 
 <!--<label for="search">検索</label>-->
 
-<!--	<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">-->
-<p>検索<input type="search" name="search" placeholder="検索キーワードを入力"></p>
-<input type="submit" value="検索">
-<!--	</form>-->
-	
+<form method="get" action="#" th:action="@{/search/{price}}" th:object="${loginput}">
+<p><input type="search" name="price"  id = "price" placeholder="金額を入力">から
+		 <input type="search" name="price2"  id = "price2" placeholder="金額を入力">の間</p>
+		 <div align="center"><input type="submit" value="検索"></div>
+</form>
+<form method="get" action="#" th:action="@{/search2/{score}}" th:object="${loginput}">
+<p><input type="search" name="score"  id = "score" placeholder="スコアを入力"></p>
+		 <div align="center"><input type="submit" value="検索"></div>
+</form>
+<br>
 	<table>
 		<tr>
 			<th>番号</th>

@@ -55,17 +55,18 @@ public class Logdao {
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
 		}
-
+		
 		//Controllerに渡す
 		return resultDb2;
 	}
 
 	
 	
-	public List<Logform> searchDb_limited(Long price) {
+	public List<Logform> searchDb_limited(Long price, Long price2) {
 		//データベースから取り出したデータをresultDB1に入れる
-		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM busilog where price >= ? AND (price + (price - 1)) < ?", price);
-
+		System.out.print(price);
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM busilog where price >= ? AND price <= ?", price,price2);
+		
 		//画面に表示しやすい形のList(resultDB2)を用意
 		List<Logform> resultDb2 = new ArrayList<Logform>();
 
@@ -87,10 +88,43 @@ public class Logdao {
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
 		}
-
+		System.out.print(resultDb2);
 		//Controllerに渡す
 		return resultDb2;
 	}
+	
+	
+	public List<Logform> searchDb_limited_score(Long score) {
+		//データベースから取り出したデータをresultDB1に入れる
+		System.out.print(score);
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM busilog where score >= ?", score);
+		
+		//画面に表示しやすい形のList(resultDB2)を用意
+		List<Logform> resultDb2 = new ArrayList<Logform>();
+
+		//1件ずつピックアップ
+		for (Map<String, Object> result1 : resultDb1) {
+
+			//データ1件分を1つのまとまりとしたEntForm型の「entformdb」を生成
+			Logform entformdb = new Logform();
+
+			//id、nameのデータをentformdbに移す
+			entformdb.setId((int) result1.get("id"));
+			entformdb.setShopname((String) result1.get("shopname"));
+			entformdb.setFoodname((String) result1.get("foodname"));
+			entformdb.setPrice((int) result1.get("price"));
+			entformdb.setGenre((String) result1.get("genre"));
+			entformdb.setScore((int) result1.get("score"));
+			entformdb.setComment((String) result1.get("comment"));
+			entformdb.setShopaddress((String) result1.get("shopaddress"));
+			//移し替えたデータを持ったentformdbを、resultDB2に入れる
+			resultDb2.add(entformdb);
+		}
+		System.out.print(resultDb2);
+		//Controllerに渡す
+		return resultDb2;
+	}
+	
 	
 	
 	

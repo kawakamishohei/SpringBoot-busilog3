@@ -2,6 +2,7 @@ package com.example.demo;
 
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 
 public class Loginput {
@@ -18,9 +19,9 @@ public class Loginput {
 	private String comment;
 	@NotBlank(message = "メールアドレスを入力してください")
 	private String shopaddress;
-	
+	@NotNull(message = "スコアを入力してください")
 	private int score;
-	
+	@NotNull(message = "金額を入力してください")
 	private int price;
 	public String getShopname() {
 		return shopname;

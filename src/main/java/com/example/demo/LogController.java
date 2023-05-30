@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.DAO.Logdao;
 import com.example.demo.entity.Logform;
@@ -64,22 +65,31 @@ public class LogController {
 		public String list(Model model) {
 			List<Logform> list = logdao.searchDb();
 			model.addAttribute("dbList",list);
-			model.addAttribute("title","一覧ページ");
+			model.addAttribute("title","Busilogリスト");
 			return "list";
 		}
 		
 		//条件検索(SELECT * WHERE)
 		@RequestMapping("/search/{price}")
-		public String list_limited(@PathVariable Long price,Model model) {
-			List<Logform> list = logdao.searchDb_limited(price);
-			
-			//リストから、オブジェクトだけをピックアップ
-			Logform entformdb = list.get(0);
-
-			//スタンバイしているViewに向かって、データを投げる
-			model.addAttribute("loginput", entformdb);
-			return "redirect:/list";
+		public String list_limited(@RequestParam("price") Long price,@RequestParam("price2") Long price2,Model model) {
+			List<Logform> list = logdao.searchDb_limited(price,price2);
+			model.addAttribute("dbList",list);
+			model.addAttribute("title","Busilogリスト");
+			return "list";
 		}
+		
+		
+		//条件検索(SELECT * WHERE)
+		@RequestMapping("/search2/{score}")
+		public String list_limited_score(@RequestParam("score") Long score,Model model) {
+		List<Logform> list = logdao.searchDb_limited_score(score);
+		model.addAttribute("dbList",list);
+		model.addAttribute("title","Busilogリスト");
+		return "list";
+		}
+		
+		
+		
 		
 		//削除(DELETE)
 		@RequestMapping("/del/{id}")
