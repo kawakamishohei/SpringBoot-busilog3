@@ -15,9 +15,9 @@ public class Loginput {
 	private String foodname;
 	@NotBlank(message = "ジャンルを入力してください")
 	private String genre;
-	@NotBlank(message = "コメントを入力してください")
+	
 	private String comment;
-	@NotBlank(message = "メールアドレスを入力してください")
+	@NotBlank(message = "住所を入力してください")
 	private String shopaddress;
 	@NotNull(message = "スコアを入力してください")
 	private int score;
