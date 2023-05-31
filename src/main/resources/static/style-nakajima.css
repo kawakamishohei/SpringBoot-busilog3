@@ -54,14 +54,14 @@ form dl dd {
 
 .DivLink {
 	position: relative;
-/*	display: inline-block;*/
+	/*	display: inline-block;*/
 
-	
+
 	justify-content: center;
 	align-items: center;
 
 
-	
+
 	/*    ボタンの形について*/
 	width: 280px;
 	height: 96px;
@@ -135,16 +135,21 @@ form dl dd {
 	background-color: #daa520;
 }
 
+/*ボタンの中央揃え*/
+.Center{
+	text-align: center;
+}
 
 /*-------------------------------------------------------------------------*/
 
 .ConfirmBox {
 	position: relative;
-	width: px;
+	width: 500px;
 	height: px;
 	background-color: #fafad2;
-	margin: 100px 100px 50px;
-	padding: 40px;
+	/*	margin:100px 100px 50px;*/
+	margin: 50px auto;
+	padding: 25px 50px;
 	border-radius: 30px;
 }
 
@@ -172,6 +177,7 @@ form dl dd {
 /*一覧画面の小さめのボタン*/
 .MiniListButton {
 	position: relative;
+	
 	/*    ボタンの形について*/
 	width: 100px;
 	height: 50px;
