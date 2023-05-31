@@ -42,7 +42,7 @@ public class LogController {
 				return "input";
 			}
 
-			model.addAttribute("title", "確認ページ");
+			model.addAttribute("title", "確認");
 			return "confirm";
 		}
 		
@@ -65,7 +65,7 @@ public class LogController {
 		public String list(Model model) {
 			List<Logform> list = logdao.searchDb();
 			model.addAttribute("dbList",list);
-			model.addAttribute("title","Busilogリスト");
+			model.addAttribute("title","タベータベース");
 			return "list";
 		}
 		
@@ -74,7 +74,7 @@ public class LogController {
 		public String list_limited(@RequestParam("price") Long price,@RequestParam("price2") Long price2,Model model) {
 			List<Logform> list = logdao.searchDb_limited(price,price2);
 			model.addAttribute("dbList",list);
-			model.addAttribute("title","Busilogリスト");
+			model.addAttribute("title","タベータベース");
 			return "list";
 		}
 		
@@ -84,7 +84,7 @@ public class LogController {
 		public String list_limited_score(@RequestParam("score") Long score,Model model) {
 		List<Logform> list = logdao.searchDb_limited_score(score);
 		model.addAttribute("dbList",list);
-		model.addAttribute("title","Busilogリスト");
+		model.addAttribute("title","タベータベース");
 		return "list";
 		}
 		
@@ -93,17 +93,17 @@ public class LogController {
 		public String list_sort(Model model) {
 		List<Logform> list = logdao.sortDb();
 		model.addAttribute("dbList",list);
-		model.addAttribute("title","Busilogリスト");
+		model.addAttribute("title","タベータベース");
 		return"list";
 		}
 		
 		
-		//ソート(金額)
+		//ソート(スコア)
 		@RequestMapping("/sort2")
 		public String list_sort2(Model model) {
 		List<Logform> list = logdao.sort2Db();
 		model.addAttribute("dbList",list);
-		model.addAttribute("title","Busilogリスト");
+		model.addAttribute("title","タベータベース");
 		return"list";
 		}
 		
@@ -126,7 +126,7 @@ public class LogController {
 
 			//スタンバイしているViewに向かって、データを投げる
 			model.addAttribute("loginput", entformdb);
-			model.addAttribute("title", "編集ページ");
+			model.addAttribute("title", "編集フォーム");
 			return "edit";
 		}
 		

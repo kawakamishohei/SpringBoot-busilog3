@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>編集 - BUSILOG</title>
+	<title>編集 - タベータベース</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" th:href="@{/style-nakajima.css}">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -14,38 +14,39 @@
 		<div class="ConfirmBox">
 			<h2 class="kyocho">登録情報編集</h2>
 			<div class="Center">
-			<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
+				<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
 
 
-				<p class="defaultFont">
-					番号：<span th:text="*{id}"></span>
-					<input type="hidden" name="id" th:value="*{id}">
-				</p>
-
-				<!--			<p>-->
-
-				<dl class="defaultFont">
-					<dt>店名　</dt>
-					<dd><input type="text" name="shopname" th:value="*{shopname}"class="defaultFont"></dd>
-					<dt>商品名　</dt>
-					<dd><input type="text" name="foodname" th:value="*{foodname}"class="defaultFont"></dd>
-					<dt>値段　</dt>
-					<dd><input type="text" name="price" th:value="*{price}"class="defaultFont"></dd>
-					<dt>ジャンル　</dt>
-					<dd><input type="text" name="genre" th:value="*{genre}"class="defaultFont"></dd>
-					<dt>スコア　</dt>
-					<dd><input type="text" name="score" th:value="*{score}"class="defaultFont"></dd>
-					<dt>コメント　</dt>
-					<dd><input type="text" name="comment" th:value="*{comment}"class="defaultFont"></dd>
-					<dt>店舗住所　</dt>
-					<dd><input type="text" name="shopaddress" th:value="*{shopaddress}"class="defaultFont"></dd>
-				</dl>
-				<!--<p>-->
-
-				<input type="submit" class="MiniButton" value="更新">
+					<p class="defaultFont">
+						番号：<span th:text="*{id}"></span>
+						<input type="hidden" name="id" th:value="*{id}">
+					</p>
 
 
-			</form>
+
+					<dl class="defaultFont">
+						<dt>店名　</dt>
+						<dd><input type="text" name="shopname" th:value="*{shopname}" class="defaultFont" required></dd>
+						<dt>商品名　</dt>
+						<dd><input type="text" name="foodname" th:value="*{foodname}" class="defaultFont" required></dd>
+						<dt>値段　</dt>
+						<dd><input type="text" name="price" th:value="*{price}" class="defaultFont" required></dd>
+						<dt>ジャンル　</dt>
+						<dd><input type="text" name="genre" th:value="*{genre}" class="defaultFont" required></dd>
+						<dt>スコア　</dt>
+						<dd><input type="text" name="score" th:value="*{score}" class="defaultFont" required></dd>
+						<dt>コメント　</dt>
+						<dd><input type="text" name="comment" th:value="*{comment}" class="defaultFont"></dd>
+						<dt>店舗住所　</dt>
+						<dd><input type="text" name="shopaddress" th:value="*{shopaddress}" class="defaultFont" required>
+						</dd>
+					</dl>
+
+
+					<input type="submit" class="MiniButton" value="更新">
+
+
+				</form>
 			</div>
 		</div>
 	</div>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>入力 - BUSILOG</title>
+	<title>入力 - タベータベース</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" th:href="@{/style-kanesaka.css}">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -31,7 +31,7 @@
 
 					<dt>値段：</dt>
 					<dd>
-						<input type="text" name="price" th:value="*{price}" class="defaultFont">
+						<input type="text" name="price" th:value="*{price}" class="defaultFont" required>
 						<div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">エラー</div>
 					</dd>
 
@@ -43,7 +43,7 @@
 
 					<dt>スコア：</dt>
 					<dd>
-						<input type="text" name="score" th:value="*{score}" class="defaultFont">
+						<input type="text" name="score" th:value="*{score}" class="defaultFont" required>
 						<div th:if="${#fields.hasErrors('score')}" th:errors="*{score}">エラー</div>
 					</dd>
 

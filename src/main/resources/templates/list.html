@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>一覧 - BUSILOG</title>
+	<title>一覧 - タベータベース</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" th:href="@{/style-nakajima.css}">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -11,22 +11,18 @@
 <body>
 	<h1 th:text="${title}"></h1>
 
-	<!--	<form method="get" action="#" th:action="@{confirm}" th:object="${loginput}">-->
-	<!--		<p>検索：<input type="text" name="shopname" th:value="*{shopname}"></p>-->
-	<!--		<input type="submit" value="検索">-->
-	<!--	</form>-->
-
-	<!--<label for="search">検索</label>-->
 	<div align="center">
 		<form method="get" action="#" th:action="@{/search/{price}}" th:object="${loginput}">
-			<p class="defaultFont"> <input type="search" name="price" id="price" placeholder="金額を入力" class="defaultFont">から
-				<input type="search" name="price2" id="price2" placeholder="金額を入力" class="defaultFont">の間
+			<p class="defaultFont"> <input type="search" name="price" id="price" placeholder="金額を入力" class="defaultFont"
+					required>から
+				<input type="search" name="price2" id="price2" placeholder="金額を入力" class="defaultFont" required>の間
 			</p>
-			<input type="submit" class="MiniListButton" value="検索">
+			<input type="submit" class="MiniListButton" value="検索" required>
 		</form>
 		<form method="get" action="#" th:action="@{/search2/{score}}" th:object="${loginput}">
-			<p class="defaultFont"> <input type="search" name="score" id="score" placeholder="スコアを入力" class="defaultFont"></p>
-			<input type="submit" class="MiniListButton" value="検索">
+			<p class="defaultFont"> <input type="search" name="score" id="score" placeholder="スコアを入力"
+					class="defaultFont" required></p>
+			<input type="submit" class="MiniListButton" value="検索" required>
 		</form>
 
 		<p>
@@ -75,11 +71,11 @@
 
 	<div class="DivLink">
 		<p>入力画面へ戻る</p>
-		<a class="Link" href="/input" th:href="@{/input}" ></a>
+		<a class="Link" href="/input" th:href="@{/input}"></a>
 	</div>
 	<div class="DivLink">
 		<p>ホームへ戻る</p>
-		<a class="Link" href="index.html" th:href="@{/}" ></a>
+		<a class="Link" href="index.html" th:href="@{/}"></a>
 	</div>
 
 
