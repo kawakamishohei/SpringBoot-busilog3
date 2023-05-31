@@ -7,6 +7,11 @@ h1{
 	text-align: center;
 }
 
+.CompleteWord{
+	font-size:20px;
+	font-weight:bold;
+	text-align: center;
+}
 
 .DivLink {
 	position: relative;

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>BUSILOG</title>
+	<title>登録完了 - タベータベース</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" th:href="@{/style-kanesaka.css}">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -10,9 +10,22 @@
 
 <body>
 	<h1>登録完了</h1>
-	<p>DB登録が完了しました！</p>
-	<p></p>
-	<a href="http://localhost:8080/list" class="DivLink">一覧画面</a>
+	<div class="ConfirmBox">
+	<p class="CompleteWord">登録が完了しました！</p>
+	</div>
+<!--	<p></p>-->
+<!--	<a href="http://localhost:8080/list" class="DivLink">一覧画面へ</a>-->
+
+	<div class="DivLink">
+		<p>一覧画面へ</p>
+		<a class="Link" href="http://localhost:8080/list" th:href="@{/list}" ></a>
+	</div>
+	
+	<div class="DivLink">
+		<p>ホームへ</p>
+		<a class="Link" href="index.html" th:href="@{/}"></a>
+	</div>
+
 </body>
 
 </html>
